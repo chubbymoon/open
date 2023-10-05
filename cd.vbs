@@ -3,6 +3,9 @@ Set objShell = WScript.CreateObject("WScript.Shell")
 
 '请将下一行中的 "searchPath = "后的值, 修改为要搜索的路径！
 searchPath = "D:\常用文件夹"
+
+
+' -- 为保障程序的稳定性，一般用户请勿修改以下内容 --
 searchWay = "way.bat"
 strKeys = ""
 

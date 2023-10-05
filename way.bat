@@ -74,9 +74,12 @@ if "%myPath%"=="" (
     echo 未指定路径！
 ) 
 
+
 REM 打开匹配的文件或提示未找到
 if not "!matched!" == "" (
-    start "" "!matched!"
+@rem      start "" "!matched!"
+    set "openfile_path=!matched!"
+    call :openfile
     echo.
     echo OK！
     echo.
@@ -86,17 +89,19 @@ if not "!matched!" == "" (
     echo.
     echo 该窗口自动关闭中... 
     TIMEOUT /t 3 > NUL
-)else (
+) else (
     if "%in_mode%" == "1" (
         REM 模式一：cmd窗口输入
         echo.
-        echo 没有找到相关的文件耶！
+        echo 没有找到相关的项目耶！
         echo.
         echo.
         echo 该窗口自动关闭中...   
         TIMEOUT /t 3 > NUL
     ) else if "%in_mode%" == "2" (
-        start "" ".NotFound.bat"
+@rem         start "" ".NotFound.bat"
+        set "openfile_path=.NotFound.bat"
+        call :openfile
     )
 )
 EXIT
@@ -148,5 +153,11 @@ if not "!arg1:~%count%,1!" == "" (
     set /a count+=1
     goto get_str_len
 )
+
+goto :eof
+
+:openfile
+@rem 使用vbs打开文件的快捷方式可以防止闪退(vbs打开bat, bat在打开其他文件夹的快捷方式多次打开会闪退)
+mshta VBScript:Execute("Set objShell=CreateObject(""WScript.Shell"") : objShell.Run(""""""!openfile_path!"""""") : close")
 
 goto :eof

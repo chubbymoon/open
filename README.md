@@ -1,5 +1,40 @@
 pick：快捷打开应用——通过指定名称关键字打开相关应用的程序
 
+使用效果：
+
+![效果演示2-2](./assets/效果演示2-2.gif)
+
+
+
+使用场景：
+
+需要内存占用较少, 电脑应用较多的场景。适用于 win10、win7。
+
+win11 测试使用效果不佳。
+
+
+
+同功能软件推荐:
+
+- Listary 
+  - 优秀的**文件搜索管理 & 快速启动程序**，实测后台内存使用 100MB 左右
+  - [Listary 本地文件高效搜索工具，使用技巧 - 知乎](https://zhuanlan.zhihu.com/p/587249600)
+
+- uTools
+  - 全局搜索 + 效率工具
+  - [uTools 相关介绍 - Topbook -bilibili](https://www.bilibili.com/video/BV1g64y1Q7PH/) 
+  
+- Wox & Everything：
+  - [Wox 相关介绍 - ViccoVlog bilibili](https://www.bilibili.com/video/BV14J41197GF/)
+  
+- Quicker & Everything：
+
+  - [Quicker 动作-智搜](https://getquicker.net/Sharedaction?code=152618d3-6c3c-49e8-afef-08d8f6743496)
+
+  - [Quicker 相关介绍 - Topbook -bilibili](https://www.bilibili.com/video/BV1Z4411E7WJ/) 
+
+
+
 脚本说明：
 
 `cd.vbs`：用于打开指定文件夹中的常用的文件夹（快捷方式）
@@ -14,7 +49,7 @@ pick：快捷打开应用——通过指定名称关键字打开相关应用的�
 
 
 
-使用方法：
+配置方法：
 
 1. 修改检索路径：将 `vbs` 文件中 `"searchPath = "` 后的值修改为指定文件夹(桌面或其他应用快捷方式所在文件夹)
 
@@ -46,7 +81,9 @@ pick：快捷打开应用——通过指定名称关键字打开相关应用的�
 
 主要更新：
 
-- 支持多文件夹检索
+- 使用统一的检索器 `way.bat`（pick_v1.9.3）
+- 支持多文件夹检索（pick_v1.10.0）
+- 优化 cd 多次打开同一文件夹快捷方式闪退的问题（pick_v1.10.3）
 
 
 
@@ -60,3 +97,4 @@ BUG 记录 :
 
 1. bat 使用 UTF-8，vbs 使用 UTF-16LE
 2. bat 和 vbs 都使用 GBK 或使用 ANSI（使用 ANSI 含中文会默认转 GBK）
+

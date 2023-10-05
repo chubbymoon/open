@@ -7,7 +7,7 @@ searchPath1 = "D:\软件目录"
 searchPath2 = ""
 searchPath3 = ""
 
-' -- 为保障程序的稳定性，一般用户请勿修改一下内容 --
+' -- 为保障程序的稳定性，一般用户请勿修改以下内容 --
 searchPaths = ""
 searchPaths = searchPaths & searchPath1
 searchPaths = searchPaths & "|" & searchPath2
