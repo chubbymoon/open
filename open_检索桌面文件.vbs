@@ -1,0 +1,24 @@
+' -- 请确保该文本的编码方式为 "GBK" --
+Set objShell = WScript.CreateObject("WScript.Shell")
+Set WshShell = CreateObject("WScript.Shell")
+desktop = WshShell.SpecialFolders("Desktop")
+
+'请将下一行中的 "searchPath = desktop", 表示要搜索的路径为桌面！
+searchPath = desktop
+searchWay = "way.bat"
+strKeys = ""
+
+' 判断是否有参数传入
+If WScript.Arguments.Count > 0 Then
+    For Each arg In WScript.Arguments
+        strKeys = strKeys & " """ & arg & """"
+    Next
+    searchPath = " """ & searchPath & """"
+Else
+    ' 如果没有参数传入，则打开脚本所在目录
+    strCurrentDirectory = objShell.CurrentDirectory
+    objShell.Run "explorer.exe """ & strCurrentDirectory & """"
+    WScript.Quit
+End If
+
+objShell.Run "cmd /c" & searchWay & searchPath & strKeys, 0, True
