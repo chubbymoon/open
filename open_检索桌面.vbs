@@ -1,9 +1,12 @@
 ' -- 请确保该文本的编码方式为 "GBK" --
+' -- 为保障程序的稳定性，一般用户请勿修改以下内容 --
+
 Set objShell = WScript.CreateObject("WScript.Shell")
 Set WshShell = CreateObject("WScript.Shell")
 desktop = WshShell.SpecialFolders("Desktop")
 
-'请将下一行中的 "searchPath = desktop", 表示要搜索的路径为桌面！
+' -- 为保障程序的稳定性，一般用户请勿修改以下内容 --
+'下一行中的 "searchPath = desktop", 表示要搜索的路径为桌面！
 searchPath = desktop
 searchWay = "way.bat"
 keywords = ""
